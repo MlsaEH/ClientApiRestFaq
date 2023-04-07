@@ -1,0 +1,131 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : Fen_Test
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : Fen_Test
+ identifier : 0x242d6ca1014462e6
+ internal_properties : CAAAAAgAAADXbmPtQIF2MVGJ3cfznAlkxS0G1WlwDYuLG8WfLTYHlzr7mxAB1vWzw0yUiM7e/cq8Yw6xBA1f33dJfhqONE/qfcdAxCr8HEbWsFkooO2n+pGPw6nWw0Z/ST5W1zgI5kycZ9s3IGGKAnYZGiauX/oeGhHxeb0CBdwxgUN97b1jW2XXqTl1W4xALikwB3fkq3BA8I9zqbd/GWR7vizDGt4ZIXFBsC9NyMLw5vX0NuvHxAQ9ZV916pVoVbYJI7uBj8KqUNn/cCw9TJdIufYrYJ897PBnktQ1/0o0ezqlgyOsHeIaedEf3pJ+kpaxrle/djsrnl6GNleZ2dW/zhynkBr2xi8t9U1Zv+EF9jPhTrk5jdbhk8JG3AT++U31/FXMk2g5aHtEPBzY6rYBq4KFtD/KWAiELsZDxc42kZDzYJkOA/aByJI8u/w5ySiT2LkeeHBNF8V7xDHOEwIWb4ImoEqShnO3URJglcKgF8PI6D5MQ2JQfWgc+vb9Mr0eCw90MrosVoWu+C81xnGeylfhkXC1IzCWIcVbRWrIG0BKFNteq04ejqaV73VmvWyg2BSSIxsUhbiC/Se2LY2xWE2iMUUCHWFg5BlMnTjSzFXuhhCdgoA8VcSC2uObpilQjCjPBBue8X7l46pW4/d2DV8uTtPwBeJWDzkzzdVEwC1vthqA0FussEzo
+ properties :
+  width : 204
+  height : 86
+  widthClient : 202
+  heightClient : 55
+ controls :
+  -
+    name : Btn_SCP
+    identifier : 0x242d6f6004ab1c61
+    internal_properties : CAAAAAgAAADS0LDYXFZBZyF3wAYDihs0qradkXSRBR713ldOxa4TDLLqdDYK2rD9CaT5gWz9ELVS8TBS8MsKGOKNyLjlCU9HY6wsyNSZM2eR5dLrA7vHrqJGOWoBV+X3pUKQ3c5GLWUyxgmtI2zvlOyRHN7ICKuaIpfxoZdlj1yYYljszhpev/0j53cdHCbKDpU1cF2iNKL/Tj6CM49L7wrGEcdSzHelS9MDAgSmIVgPbECG1b/W4QmDVkX+pkEgqCtZGtBWiJjcA8ruJ8PimiyX/BqtRVx6z4l7kM5do+9pjGBPUTq/75sE6qmHiRZIXy3AzMamCT/dpksBqxK1vgUyouZ7y4hBGSEBw3RAQzHXCpM0NIZ1d6/7V59W66NK/H1eN2wMF2qj2SNU2RDf+H50M7gdMuF0dTzZ4MTpE/3pDZq/wrnNQSjztVxs7h2vCH7g0yc+ZHJjr5mNTrY/YFFO+lr+O2X5cpli1YThs4HlK9CWEnXVNQ5htIgT1ZsyxYesrQZX9auusURAo0g4a6c6SDXKVxd4H/iUAp4oVZ9sgyqOUOtKXXknVrwmJ1z+r5NWVL1dDttPjtb+Np82oAeEC9FftZOPDePqdgrUhb/hRKurD5ESzsVcV123XmrT/+KyDGkPLATnRa59ZZ8UC1/JiFyHTYbxpKzQKsy0ItbeiQ3qTzTVX5ztb0ng6sNVBHIpToj4J95CqyYmZBvud9n9cPcEyuoQuUUIo4wJjPTkPiJ8YoJKbN82EPdd+gfcYwDF76hkuQLOTIBrKsZVodByOGErAyyZetCyBi+Qo3jyEgzyxv6ZHWSlIwy3WSfXCxxx5gbexFPC9Oh1isD1l1jDw1kaFfr6j5/xVUTcTFsiaGI6054OyKPHlGKO2QjtEjrhQBgbNN2Xx6Mpg8WYBggw
+    properties :
+     x : 16
+     y : 13
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1+
+         
+         // Création de la session SSH
+         sessionSSH est une sshSession
+         sessionSSH.Adresse					= "87.98.183.225"
+         sessionSSH.Port						= 23
+         sessionSSH.Utilisateur				= "eh"
+         sessionSSH.MotDePasseUtilisateur	= "eh"
+         sessionSSH.TimeoutConnexion			= 2s
+         
+         sNomFichier				est une chaîne	= "text.txt"
+         // Chemin du fichier sur le poste local
+         sCheminFichierLocal		est une chaîne	= fRepExe() + [fSep()] + sNomFichier
+         // Chemin du fichier sur le poste distant (ici sous Linux)
+         sCheminFichierDistant	est une chaîne	= "textrecu.txt" //+sNomFichier
+         si fFichierExiste(sCheminFichierLocal) alors
+         	// Envoi du fichier via SCP
+         	SI PAS SCPEnvoieFichier(sessionSSH, sCheminFichierLocal,sCheminFichierDistant) ALORS
+         		Erreur(ErreurInfo(errComplet))
+         	SINON
+         		Info("Envoie terminé")
+         	FIN
+         sinon
+         	erreur("Fichier non trouvé : "+sCheminFichierLocal)
+         fin
+         
+         	// Suivi de la progression (procédure optionnelle)
+         	PROCÉDURE INTERNE Progression(nTailleTotale, nTailleEnCours)
+         		Trace(nTailleEnCours + "/" + nTailleTotale)
+         	FIN
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : Btn_SCP1
+    identifier : 0x242d7b7d06116f40
+    internal_properties : CAAAAAgAAAA9D/z0AQv+D7TUf0wog8Ep39nw2tbR7aRuTj+Hi4+25qSDxF0LqZ/TJvzVBVK+CEpwzbJsBM8I/ga71eJzcFLLTVq0MrUeo6gkHGixRuRKoqrfnG3X6bPkGfwe6TpquzjqkjNJdHIIhI4JP5DrlcTdwOdBygCtBxZWavFMQJKaZH7OOhgnMlsLIzXEr11VHlIWatk21VbYXPNFWus2yiqMlwYMOE2QJH44XnMP446DioV7UDyYou9ENUswNDA4/XlRC6mgFNCP2hCZKMVsj52E9GozpdWnBg/ShLpRtEgy4olvCf0PBElETP9FiAdKD7bRGg/psIh+CZvE5L5mUPkiHn6nEvX/zT3OkG29qj5N3Tb5TN52rsUMlOLRIJ6GtekgaXKTTCATS6UytKGtE83A2o5RnRFEsfFZW4h7d4WqfT6RJEu3Hey4PruhNE0edPKjt+gXi0zU/QHz0x/H4jNthkByqenSLmzHZbFVRjzXQce89gueGISIb0iV4D6RKMu1JSQQGjFbYEHRain4eOqS/3wCWtrK4cIZmXfbnUTodF9HfhR9CsrdYXPUqlZ8SuEhJpom/YrNue8RPuooKJ0QLIKMF3sEKFntV6Ftdz5wbJaicFCwq7D3JwRJU9RLAxPLCL5CPOR+RfBCEHiZylhp2y3wwGHnXBrS6CJx2Vaadx+fkWMM/WbsiBiXTQTH4oSCT2DSPP3bOdZJ1Wk97tMwLzj0vtlvWzankzrDUJhQmBTWj0ZT6BMeIR4tGriAD1NA6YSFcY7ia8Cnz67RltkiUKw8OaRelw0qeKCmM1BEEN1WwDhC4HK+bUIVizcsI8QNgvsj/QkhFJyNPzmJ/6LizkZD55VTXwwekPwXACWyklFuopjaGbRwFpIVsGpxMdqTpXXbqjaJpNYCjPwlwHdkKCw=
+    properties :
+     x : 102
+     y : 14
+     width : 80
+     height : 24
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         nConnexion est un entier
+         nConnexion = FTPConnecte("sftp://87.98.183.225", "eh", "eh",23)
+         si nConnexion<>-1 alors
+         	SI FTPEnvoie(nConnexion, "text.txt", "/text.txt") = Faux ALORS
+         		erreur("Echec du transfert",ErreurInfo(errMessage))
+         	sinon
+         		info("ok")
+         	FIN
+         sinon
+         	Erreur("Echec connexion",ErreurInfo(errMessage))
+         fin
+        type : 18
+      -
+        type : 161
+        enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAAAXIKszbxT/SMT9NgQtHv6lVJPjsJ17ZsSqUNpEG60xsjEUgvQD5yosF74pQ5dLg8Cjjq05yjauR/1uDul/apE/gxhoy0NFQHM1uPoK/4VOtSNuS9tyyITZK3zTjIBQcnNeNUMOy3RYaMiXXPVM9w5vkcw5gOSGJ14Cdftp0Jrr10VU6AEv/lwhWD+Gek0ZcX+02V6zaVc+ljSUL+odxUrlj3F0Eivghcptl2ifwXVLSaEEDYyXNv0sRc2ItvWmVz/XYpxR6XTKyWdpymbw/csnmGhnd/FNE1c/jX5RZx5IaVeDBXYIMrE2HzxGfmxLZlwf+68QJ8sCGs11
+  options : []
+ languages :
+  - fr-FR
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1+
+      PROCEDURE MaFenêtre()
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+ code_parameters :
+  internal_properties : CAAAAAgAAAB/E2SZRb9VnQU5+PivybZwVafwXhgCAWSYftdyjxWxFx7cb58ydr0ud57ZygZVSIIWCI/Me2Ok
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x142d6c97000a3d0e
+  internal_properties : CAAAAAgAAAA7wCugPa3Llh29up4VO+T++wa3OrewuQ3WP4NJV47trUqhlqE=
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

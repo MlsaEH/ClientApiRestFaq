@@ -1,0 +1,76 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : Fen_PDF
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : Fen_PDF
+ identifier : 0x240b42b5048394bd
+ internal_properties : CAAAAAgAAABsDax8HYLDVxbmN+9MWv5OtXh6uRIlXE2vUIqf8ZzrVO4nX/Mg5SdK4k3ZSKZ6d8R1sCAU9Oqab6aIKwzQk3hQUCYW9ebjPsz6P7pi+p687HwFRyFrLW4btQvdkzFKUspMxx7fActRRWf3Ev0IJsmCNw3fkHB24aB897I+3ui1kvp1wMLlFKwJv0h0YZoCG9em43FzEVvdq0nPWs1jesoIlsX7YlpcPUuP2MXdd+dVaakgmCpArq4yMyKR7cuQXwUanuBEEQtftAfBcRob6mQdetp7Lp8lDmdLmxWDj7wB0H5E5rrM24edyj9rYhLcF7RqVvVun6/iav9uPMpjAPFUtVhY+T2mQTyU39dxPuYv4tBiXuI4S6ZNXGqTWsn9fzWJD5iW+PF08yOcK1QTSy1HiOfFFlhuuasP8K4FXDiMnEwYgZhMUtbw/GFpqgs9pHM7HNxPGBj2YIsleZz6F1zVPoL4jxhn22WrSHdehON2LqKZjIBY2RR6A7Dmq4tFeC3K7dI2SirtqVCjcgm3VIkT9KjEyuDNY3dRbPa6uJ4CMla6Hulp1K+HLPIbZisGXEM1xaxRPhEiMlWnRJG5HqJaLkOsGW6sogSg6kI51YEdKWqmG4iGqYc5f1vN5EJdfXfBTnync/0+rkOu5jx8mkMdxARhFg==
+ properties :
+  width : 800
+  height : 600
+  widthClient : 798
+  heightClient : 568
+ controls :
+  -
+    name : LecteurDeDocuments1
+    identifier : 0x240b44c5059fa32e
+    internal_properties : CAAAAAgAAABPuZslbSUKHdh2ikt1K4hpVKZDlRNQo+SAf3sDfGmTmcf6JqLywue0B6aifC6Z6UFIUqBTKgEOFrr5dEOYbL0U8bkO5Vwa9NUasN6kvMr2gm+Yyrkul82BgRp5yvNksDRUpn2DC3cIMPO00I6J+zY0Y/pYlTpwMPTcdAnC4XN82ChtS167CjXlBsQ/+dxiIjOBYNddoat4WLIHAr+WvWuUGmw8N9Y8Smkyn6sPdhD0Hr8x6l8QbJZEdmH9vFKd1MG07cZIqM4qB/XB6mMxoYiLMsTBj9umIAxJE7wBF9lSpBkdOVs8uf4MVy0mWFEqgGfnALZ84j7qAqXX1zdRhzvl9vyQGFpwzEHCgKD7B9ORGeathNX40Xlgs4PT3ihjzTiurt9nEtrh3XboWiGksedZxcelo/KkxF1VypcjWuO0a4684D4ndaClf/OnstZOzhoI+xc9gqTwKXbp+Nf+/vYZAX9MWKHj6frWxtkgataFsGooC2ZIrWrj0Q1qujUdiWCAZpVg3Qj1FIPNMFP4604ICglWw7Mgp6q+Cr0kE7CNoEQz7sJHKM7i9/0L24Gngb94gVEbr57MCyZrHBqjgewzBp513cYUG1RfyO3qqaOK9SOZJZpdVtu67HANCWWFNv1NipvDAK88BgOHNtGXy2UQTT3aBPWPLR7o/NcaVzo/o/pvNeB9pc50AH4kzzmK3lnOuGyAISj9ci/GCJeduiSJHRkOSTUY8HilFNm4hHK6PxdsjVN6p30uu1/uPDb7Y2785ehhEAdNkk+wxzWTCSmjG1gSCwXLZDFjHo6L46lAhWvBOAtmPTJYSxfZaJMimA==
+    properties :
+     x : 6
+     y : 6
+     width : 786
+     height : 556
+    type : 128
+    code_elements :
+     type_code : 152
+     p_codes :
+      -
+        code : |1+
+         PROCEDURE AprèsAnalyseOCR(sTexte est une chaine)
+        type : 317
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAADAfZ27Q+jJ/MBXHLGCb7PyE2Yqjvuo9mAX2ZN+LLuyQtzms1431znXR0sNCCeLESXZp1gqmo+m2mUhb2ELR2phZ8VOgUSyXddfQyxpxffipvH/iiFuFkCLgpjx1Ah9/9/ndeRpWb0s9Qcjy8oPtW3aMcRtuglgDe5Ch9/jnC/Drp19/hhf+qz96diLw5T0yWlzg33c/E8hhMwUBdSOV69/8iDQGLfTvLoTvV3YkiQ5Dce7dxB2gUx1AVvVTykQMm7G+0haIOV568KMGgPEJluRN2XjgQ11Tb8vVxt6P2g=
+  options : []
+ languages :
+  - fr-FR
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1+
+      PROCEDURE MaFenêtre(ps_Pdf est chaine)
+      
+   -
+     code : |1+
+      
+      LecteurDeDocuments1=ps_pdf
+     type : 34
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+ code_parameters :
+  internal_properties : CAAAAAgAAAB/E2SZRb9VnQU5+PivybZwVafwXhgCAWSYftdyjxWxFx7cb58ydr0ud57ZygZVSIIWCI/Me2Ok
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x140b42af001e7eb5
+  internal_properties : CAAAAAgAAAA7wCugPa3Llh29up4VO+T++wa3OrewuQ3WP4NJV47trUqhlqE=
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe
