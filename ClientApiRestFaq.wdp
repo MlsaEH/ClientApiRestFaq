@@ -24,6 +24,9 @@ project :
     icon_filename : .\faq.ico
     language : 1
     64bits : true
+    new_features_help :
+     name : ""
+     internal_properties : CAAAAAgAAACqotIeo3ap3nKrRQ+rhDXOcjrBCDR4qY6YctVwolNW4EHYS5fGfgxUu0VYp3Gg1l08jGYV/6ito5W/
  elements :
   identifier : 0x43f483f10586ae68
   elements :
@@ -44,6 +47,12 @@ project :
      identifier : 0x442d6ca105bc62e6
      internal_properties : CAAAAAgAAAAeBHYqmcZuAc5nXn82wN+ZbB1bQ4oPr3x2wZaWOeuhR8lpWQmmZxpmp5EL9b0zz8ELCw==
      physical_name : .\Fen_Test.wdw
+     type : 2
+   -
+     name : Fen_GitHub
+     identifier : 0x442fca5505cd68dd
+     internal_properties : CAAAAAgAAABKwLJWVRIaxYI9/CN2AfmI1qeNFazzCPVW3QzGb6VvUbMTqj6Sazqk61VPqWlnE4VP1w==
+     physical_name : .\Fen_GitHub.wdw
      type : 2
   other_elements : []
   net_assemblies : []
