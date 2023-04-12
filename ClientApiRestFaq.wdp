@@ -68,6 +68,11 @@ project :
   type_code : 0
   p_codes :
    -
+     code : |1+
+      //Git Token
+      //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
+     type : 196608
+   -
      type : 196627
      enabled : false
   orphans :
